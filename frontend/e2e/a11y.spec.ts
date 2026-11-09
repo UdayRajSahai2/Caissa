@@ -13,7 +13,8 @@ test("an invalid username is rejected in the page", async ({ page }) => {
   await page.goto("/");
   await page.getByLabel("Chess.com username").fill("no");
   await page.getByRole("button", { name: "Analyze my games" }).click();
-  await expect(page.getByRole("alert")).toContainText("3 to 25 characters");
+  // Next.js adds its own empty role="alert" route announcer, so match the form's alert by its text.
+  await expect(page.getByRole("alert").filter({ hasText: "3 to 25 characters" })).toBeVisible();
 });
 
 test("accessibility statement is its own page", async ({ page }) => {
