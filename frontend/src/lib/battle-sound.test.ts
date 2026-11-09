@@ -22,7 +22,8 @@ describe("download sound", () => {
     const contexts: FakeContext[] = [];
     vi.stubGlobal(
       "AudioContext",
-      vi.fn(() => {
+      // A `function`, not an arrow: Vitest 4 mocks called with `new` must be constructible.
+      vi.fn(function () {
         const context = new FakeContext();
         contexts.push(context);
         return context;

@@ -2,8 +2,9 @@ import path from "node:path";
 import { defineConfig } from "vitest/config";
 
 export default defineConfig({
-  esbuild: {
-    jsx: "automatic",
+  // Vite 8 compiles with Oxc. tsconfig keeps jsx "preserve" for Next.js, so tests need the React runtime here.
+  oxc: {
+    jsx: { runtime: "automatic" },
   },
   resolve: {
     alias: {
