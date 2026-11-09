@@ -1,0 +1,32 @@
+.page {
+  display: grid;
+  gap: var(--space-32);
+  padding-block: var(--space-48) var(--space-32);
+}
+
+.head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--space-16);
+}
+
+.head h1 {
+  font-size: var(--text-3xl);
+  overflow-wrap: anywhere;
+}
+
+.jump {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-8);
+  min-height: 44px;
+  font-weight: 700;
+}
+
+@media (min-width: 768px) {
+  .head h1 {
+    font-size: var(--text-4xl);
+  }
+}

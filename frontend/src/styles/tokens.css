@@ -1,0 +1,227 @@
+/* Design tokens. Each color has one job (see docs/CRAFT_REVIEW.md).
+   Brand/primary = ink blue. Accent = amber. Data = heatmap ramp only.
+   Success = green. Danger = red. Warning = orange. Surfaces = warm paper. */
+
+:root {
+  color-scheme: light;
+  --bg: #f3eee3;
+  --surface: #faf7f0;
+  --surface-2: #efe8dc;
+  --text: #1c1a17;
+  --text-2: #5c574e;
+  --primary: #1f3a5f;
+  --primary-hover: #162a46;
+  --on-primary: #ffffff;
+  --accent: #b9770e;
+  --success: #18643f;
+  /* Google's logo needs a white ground in every theme (sign-in branding guidelines). */
+  --provider-disc: #ffffff;
+  --warning: #9a4a0b;
+  --error: #b3261e;
+  --info: #1f3a5f;
+  --info-tint: #e8eef7;
+  --border: #7a7468;
+  --focus: #0b57d0;
+  --board-light: #ebecd0;
+  --board-dark: #779556;
+  --board-highlight: #ffff00;
+  --heat-text: #1c1a17;
+  --heat-quiet-ink: #1c1a17;
+  --heat-tile-a: #e4e8ee;
+  --heat-tile-b: #dbe0e8;
+  --heat-frame: #14213a;
+  --heat-frame-radius: 14px;
+  --heat-tile-radius: 3px;
+  --heat-quiet-hatch: repeating-linear-gradient(
+    45deg,
+    transparent 0 6px,
+    color-mix(in srgb, #5b6b82 14%, transparent) 6px 7px
+  );
+  --heat-quiet-border: color-mix(in srgb, #0b1b3a 45%, transparent);
+  --heat-hot: #b9770e;
+  --heat-focus: #1f3a5f;
+  --heat-gap: 2px;
+  --heat-swatch-border: color-mix(in srgb, #1c1a17 35%, transparent);
+  --heat-card: #faf7f0;
+  --heat-card-border: color-mix(in srgb, #14213a 14%, transparent);
+  --heat-card-shadow: 0 8px 30px color-mix(in srgb, #14213a 10%, transparent);
+  --heat-bar: #747272;
+  --heat-track: #dbe0e8;
+  --heat-ghost: #5b6b82;
+  --heat-tip: #142b57;
+  --heat-tip-text: #ffffff;
+  --heat-selected-edge: #0b1220;
+  --heat-selected-line: #ffffff;
+  /* 3D skyline (HMP-06). Side faces darken the tower color toward ink so towers read as solids. */
+  --heat-tower-shade: #0b1220;
+  --heat-tower-tilt: 54deg;
+  --heat-tower-turn: 36deg;
+  --board-size: 26rem;
+  --on-board: #1c1a17;
+  --on-board-heading: #1f3a5f;
+  --feature-face: #faf7f0;
+  --feature-border: #6b7280;
+  --feature-shadow: 0 8px 24px color-mix(in srgb, var(--heat-frame) 16%, transparent);
+  --header-bg: #1f3a5f;
+  --on-header: #ffffff;
+  --header-chip: #faf7f0;
+  --header-chip-text: #1c1a17;
+  --header-chip-accent: #b9770e;
+  --header-chip-border: #7a7468;
+  --heading: #1f3a5f;
+  --header-current: #f2c14e;
+  /* Ink on the header gold (avatar initials): 11.2:1 light, 12.4:1 dark. */
+  --on-header-current: #0b1220;
+  /* Decorative dividers only; meaningful boundaries use --border (3:1). Follows --text per theme. */
+  --border-soft: color-mix(in srgb, var(--text) 14%, transparent);
+  --space-4: 4px;
+  --space-8: 8px;
+  --space-12: 12px;
+  --space-16: 16px;
+  --space-24: 24px;
+  --space-32: 32px;
+  --space-48: 48px;
+  --space-64: 64px;
+  --space-96: 96px;
+  --radius-4: 4px;
+  --radius-8: 8px;
+  --radius-16: 16px;
+  --radius-pill: 9999px;
+  --text-xs: 13px;
+  --text-sm: 14px;
+  --text-md: 16px;
+  --text-lg: 20px;
+  --text-xl: 25px;
+  --text-2xl: 31px;
+  --text-3xl: 39px;
+  --text-4xl: 49px;
+  --font-display: var(--font-fraunces), Georgia, serif;
+  --font-body: var(--font-manrope), system-ui, sans-serif;
+  --font-mono: var(--font-plex), ui-monospace, monospace;
+  --header-offset: 96px;
+  --duration: 180ms;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+    --bg: #0e1420;
+    --surface: #161d2b;
+    --surface-2: #1e2738;
+    --text: #f1ebdd;
+    --text-2: #bdb6a6;
+    --primary: #f2c14e;
+    --primary-hover: #f7d27a;
+    --on-primary: #0b1220;
+    --accent: #ffc857;
+    --success: #5fcf95;
+    --warning: #ffb020;
+    --error: #ff8a80;
+    --info: #8fb4ee;
+    --info-tint: #17233a;
+    --border: #8a93a3;
+    --focus: #8ab4f8;
+    --board-light: #ebecd0;
+    --board-dark: #779556;
+    --board-highlight: #ffff00;
+    --heat-text: #f1ebdd;
+    --heat-quiet-ink: #f1ebdd;
+    --heat-tile-a: #1a2230;
+    --heat-tile-b: #161d29;
+    --heat-frame: #14213a;
+    --heat-quiet-hatch: repeating-linear-gradient(
+      45deg,
+      transparent 0 6px,
+      color-mix(in srgb, #ffffff 8%, transparent) 6px 7px
+    );
+    --heat-quiet-border: color-mix(in srgb, #ffffff 28%, transparent);
+    --heat-swatch-border: color-mix(in srgb, #e9e6df 45%, transparent);
+    --heat-hot: #ffc857;
+    --heat-focus: #8fb4ee;
+    --heat-card: #161d2b;
+    --heat-card-border: color-mix(in srgb, #ffffff 12%, transparent);
+    --heat-card-shadow: 0 8px 30px color-mix(in srgb, #000000 32%, transparent);
+    --heat-bar: #b2a874;
+    --heat-track: #2a3344;
+    --heat-ghost: rgba(255, 255, 255, 0.12);
+    --heat-tip: #0b1220;
+    --heat-tip-text: #ffffff;
+    --heat-selected-edge: #0b1220;
+    --heat-selected-line: #ffffff;
+    --on-board: #1c1a17;
+    --on-board-heading: #8fb4ee;
+    --feature-face: #161d2b;
+    --feature-border: #6b778c;
+    --feature-shadow: 0 8px 24px color-mix(in srgb, #000000 40%, transparent);
+    --header-bg: #0a0f19;
+    --on-header: #f1ebdd;
+    --header-chip: #161d2b;
+    --header-chip-text: #f1ebdd;
+    --header-chip-accent: #ffc857;
+    --heading: #f1ebdd;
+    --header-current: #ffc857;
+    --on-header-current: #0b1220;
+    --header-chip-border: #8a93a3;
+  }
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --bg: #0e1420;
+  --surface: #161d2b;
+  --surface-2: #1e2738;
+  --text: #f1ebdd;
+  --text-2: #bdb6a6;
+  --primary: #f2c14e;
+  --primary-hover: #f7d27a;
+  --on-primary: #0b1220;
+  --accent: #ffc857;
+  --success: #5fcf95;
+  --warning: #ffb020;
+  --error: #ff8a80;
+  --info: #8fb4ee;
+  --info-tint: #17233a;
+  --border: #8a93a3;
+  --focus: #8ab4f8;
+  --board-light: #ebecd0;
+  --board-dark: #779556;
+  --board-highlight: #ffff00;
+  --heat-text: #f1ebdd;
+  --heat-quiet-ink: #f1ebdd;
+  --heat-tile-a: #1a2230;
+  --heat-tile-b: #161d29;
+  --heat-frame: #14213a;
+  --heat-quiet-hatch: repeating-linear-gradient(
+    45deg,
+    transparent 0 6px,
+    color-mix(in srgb, #ffffff 8%, transparent) 6px 7px
+  );
+  --heat-quiet-border: color-mix(in srgb, #ffffff 28%, transparent);
+  --heat-swatch-border: color-mix(in srgb, #e9e6df 45%, transparent);
+  --heat-hot: #ffc857;
+  --heat-focus: #8fb4ee;
+  --heat-card: #161d2b;
+  --heat-card-border: color-mix(in srgb, #ffffff 12%, transparent);
+  --heat-card-shadow: 0 8px 30px color-mix(in srgb, #000000 32%, transparent);
+  --heat-bar: #b2a874;
+  --heat-track: #2a3344;
+  --heat-ghost: rgba(255, 255, 255, 0.12);
+  --heat-tip: #0b1220;
+  --heat-tip-text: #ffffff;
+  --heat-selected-edge: #0b1220;
+  --heat-selected-line: #ffffff;
+  --on-board: #1c1a17;
+  --on-board-heading: #8fb4ee;
+  --feature-face: #161d2b;
+  --feature-border: #6b778c;
+  --feature-shadow: 0 8px 24px color-mix(in srgb, #000000 40%, transparent);
+  --header-bg: #0a0f19;
+  --on-header: #f1ebdd;
+  --header-chip: #161d2b;
+  --header-chip-text: #f1ebdd;
+  --header-chip-accent: #ffc857;
+  --heading: #f1ebdd;
+  --header-current: #ffc857;
+  --on-header-current: #0b1220;
+  --header-chip-border: #8a93a3;
+}

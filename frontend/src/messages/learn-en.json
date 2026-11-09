@@ -1,0 +1,891 @@
+{
+  "categories": [
+    {
+      "id": "openings",
+      "title": "Openings",
+      "blurb": "How to start a game so your pieces are ready to fight."
+    },
+    {
+      "id": "tactics",
+      "title": "Tactics",
+      "blurb": "Short, forcing ideas that win material."
+    },
+    {
+      "id": "checkmates",
+      "title": "Checkmates",
+      "blurb": "Patterns that end the game. Learn to spot them and to avoid them."
+    },
+    {
+      "id": "strategy",
+      "title": "Strategy",
+      "blurb": "Long-term plans: where pieces belong and why."
+    },
+    {
+      "id": "endgames",
+      "title": "Endgames",
+      "blurb": "Few pieces left. Exact technique turns an edge into a win."
+    }
+  ],
+  "lessons": [
+    {
+      "slug": "opening-principles",
+      "category": "openings",
+      "title": "Three jobs for your first moves",
+      "summary": "Take the center, bring out your pieces, and castle. Most good openings do all three.",
+      "level": "Beginner",
+      "minutes": 5,
+      "sections": [
+        {
+          "heading": "Take the center",
+          "paragraphs": [
+            "The four middle squares (d4, e4, d5, e5) are the most valuable on the board. A piece in the center reaches more squares, and a pawn there takes space from the other side.",
+            "Both players start by placing a pawn in the middle and then supporting it."
+          ],
+          "diagram": {
+            "fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+            "caption": "The starting position. Neither side controls the center yet.",
+            "steps": [
+              {
+                "uci": "e2e4",
+                "san": "e4",
+                "caption": "White puts a pawn in the center and opens lines for the queen and the bishop."
+              },
+              {
+                "uci": "e7e5",
+                "san": "e5",
+                "caption": "Black does the same, so White's pawn cannot simply take over."
+              },
+              {
+                "uci": "g1f3",
+                "san": "Nf3",
+                "caption": "The knight comes out and attacks the pawn on e5."
+              },
+              {
+                "uci": "b8c6",
+                "san": "Nc6",
+                "caption": "Black defends e5 with a knight. Both sides develop and guard the center at once."
+              }
+            ]
+          }
+        },
+        {
+          "heading": "Bring out your pieces, then castle",
+          "paragraphs": [
+            "Move each piece once, toward the center, before you move any piece twice. Knights and bishops first: they cannot help from their starting squares.",
+            "Castling tucks the king behind a wall of pawns and brings a rook toward the middle. Aim to castle within the first ten moves."
+          ],
+          "diagram": {
+            "fen": "r1bqkbnr/pppp1ppp/2n5/4p3/4P3/5N2/PPPP1PPP/RNBQKB1R w KQkq - 2 3",
+            "caption": "Both sides have one knight out. Now the bishops join in.",
+            "steps": [
+              {
+                "uci": "f1c4",
+                "san": "Bc4",
+                "caption": "The bishop aims at f7, the square next to Black's king that only the king defends."
+              },
+              {
+                "uci": "f8c5",
+                "san": "Bc5",
+                "caption": "Black copies the idea and aims at f2."
+              },
+              {
+                "uci": "e1g1",
+                "san": "O-O",
+                "caption": "White castles. The king is safe and the rook is ready for the center."
+              },
+              {
+                "uci": "g8f6",
+                "san": "Nf6",
+                "caption": "Black develops the last minor piece and attacks the pawn on e4."
+              },
+              {
+                "uci": "d2d3",
+                "san": "d3",
+                "caption": "White guards e4 and opens a path for the other bishop."
+              },
+              {
+                "uci": "e8g8",
+                "san": "O-O",
+                "caption": "Black castles too. After ten moves, every job is done for both sides."
+              }
+            ],
+            "expect": "balanced"
+          }
+        }
+      ],
+      "takeaway": "Before move ten, ask: Is my king castled? Are my knights and bishops out? Do I have a pawn or a piece in the center?"
+    },
+    {
+      "slug": "early-queen",
+      "category": "openings",
+      "title": "Why the queen waits",
+      "summary": "An early queen makes threats, but she becomes a target and loses time.",
+      "level": "Beginner",
+      "minutes": 4,
+      "sections": [
+        {
+          "heading": "Threats that cost time",
+          "paragraphs": [
+            "The queen is your strongest piece, so every attack on her forces you to move her again. Each of those moves is a move your other pieces did not make.",
+            "Here White brings the queen out on move two and threatens a quick mate on f7."
+          ],
+          "diagram": {
+            "fen": "rnbqkbnr/pppp1ppp/8/4p3/4P3/8/PPPP1PPP/RNBQKBNR w KQkq - 0 2",
+            "caption": "After 1.e4 e5. White is about to bring the queen out.",
+            "steps": [
+              {
+                "uci": "d1h5",
+                "san": "Qh5",
+                "caption": "The queen attacks e5 and eyes f7."
+              },
+              {
+                "uci": "b8c6",
+                "san": "Nc6",
+                "caption": "Black guards e5 while developing a piece."
+              },
+              {
+                "uci": "f1c4",
+                "san": "Bc4",
+                "caption": "Now queen and bishop both hit f7. Qxf7 would be checkmate."
+              },
+              {
+                "uci": "g7g6",
+                "san": "g6",
+                "caption": "Black blocks the queen's path and attacks her."
+              },
+              {
+                "uci": "h5f3",
+                "san": "Qf3",
+                "caption": "The queen moves again and renews the threat on f7."
+              },
+              {
+                "uci": "g8f6",
+                "san": "Nf6",
+                "caption": "Black blocks with a new piece. Black has developed with every move while White has moved the queen three times."
+              }
+            ],
+            "expect": "balanced"
+          }
+        },
+        {
+          "heading": "The trap if you defend the wrong way",
+          "paragraphs": [
+            "Early queen moves still win games when the defender does not see the threat. Always ask what your opponent's last move threatens."
+          ],
+          "diagram": {
+            "fen": "r1bqkbnr/pppp1ppp/2n5/4p2Q/2B1P3/8/PPPP1PPP/RNB1K1NR b KQkq - 3 3",
+            "caption": "Queen and bishop both aim at f7. Black must defend it now.",
+            "steps": [
+              {
+                "uci": "g8f6",
+                "san": "Nf6",
+                "caption": "Black develops and attacks the queen, but does not cover f7."
+              },
+              {
+                "uci": "h5f7",
+                "san": "Qxf7#",
+                "caption": "Checkmate. The bishop guards the queen, so the king cannot take her."
+              }
+            ],
+            "expect": "checkmate"
+          }
+        }
+      ],
+      "takeaway": "Develop knights and bishops before the queen. When your opponent's queen comes out early, attack her with pieces that also develop."
+    },
+    {
+      "slug": "center-pawns",
+      "category": "openings",
+      "title": "Challenge the center with pawns",
+      "summary": "When your opponent builds a center, strike at it with a pawn from the side.",
+      "level": "Beginner",
+      "minutes": 4,
+      "sections": [
+        {
+          "heading": "A pawn from the side",
+          "paragraphs": [
+            "A pawn in the center is strong only while it stands safely. A pawn from the c-file or the e-file can attack it and make the other side decide.",
+            "In this classic opening, White offers the c-pawn to pull Black's d-pawn away from the center."
+          ],
+          "diagram": {
+            "fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+            "caption": "The starting position.",
+            "steps": [
+              {
+                "uci": "d2d4",
+                "san": "d4",
+                "caption": "White takes the center with the queen's pawn."
+              },
+              {
+                "uci": "d7d5",
+                "san": "d5",
+                "caption": "Black answers in kind."
+              },
+              {
+                "uci": "c2c4",
+                "san": "c4",
+                "caption": "White attacks d5 from the side. If Black takes, White gets more central control."
+              },
+              {
+                "uci": "e7e6",
+                "san": "e6",
+                "caption": "Black keeps the pawn on d5 and supports it."
+              },
+              {
+                "uci": "b1c3",
+                "san": "Nc3",
+                "caption": "White adds a knight to the pressure on d5."
+              },
+              {
+                "uci": "g8f6",
+                "san": "Nf6",
+                "caption": "Black adds a knight to the defense. The fight for d5 shapes the whole game."
+              }
+            ],
+            "expect": "balanced"
+          }
+        }
+      ],
+      "takeaway": "Count attackers and defenders on the key central square. Add a piece to the fight rather than moving one already there."
+    },
+    {
+      "slug": "forks",
+      "category": "tactics",
+      "title": "Forks: one move, two targets",
+      "summary": "A fork attacks two things at once. Your opponent can save only one.",
+      "level": "Beginner",
+      "minutes": 4,
+      "sections": [
+        {
+          "heading": "The knight fork",
+          "paragraphs": [
+            "Knights fork well because their jumps are hard to see. A check is the strongest first target: the king must move, and the second piece falls."
+          ],
+          "diagram": {
+            "fen": "r3k3/8/8/3N4/8/8/5PPP/6K1 w - - 0 1",
+            "caption": "White's knight is one jump away from both the king and the rook.",
+            "steps": [
+              {
+                "uci": "d5c7",
+                "san": "Nc7+",
+                "caption": "Check, and the rook on a8 is attacked too."
+              },
+              {
+                "uci": "e8d7",
+                "san": "Kd7",
+                "caption": "The king must move out of check."
+              },
+              {
+                "uci": "c7a8",
+                "san": "Nxa8",
+                "caption": "The knight takes the rook."
+              }
+            ],
+            "expect": "white-wins"
+          }
+        },
+        {
+          "heading": "The pawn fork",
+          "paragraphs": [
+            "Even a pawn can fork. A pawn attacks the two squares diagonally in front of it, so two pieces side by side with one empty square between them are in danger."
+          ],
+          "diagram": {
+            "fen": "4k3/8/8/2n1b3/8/2PP4/6K1/3R4 w - - 0 1",
+            "caption": "Black's knight and bishop stand on c5 and e5, two squares apart.",
+            "steps": [
+              {
+                "uci": "d3d4",
+                "san": "d4",
+                "caption": "The pawn attacks both pieces. The c3 pawn guards it."
+              },
+              {
+                "uci": "e5f6",
+                "san": "Bf6",
+                "caption": "Black saves the bishop."
+              },
+              {
+                "uci": "d4c5",
+                "san": "dxc5",
+                "caption": "White takes the knight."
+              }
+            ],
+            "expect": "white-wins"
+          }
+        }
+      ],
+      "takeaway": "Look for two undefended pieces, or a king and a loose piece, that one of your pieces could hit at the same time."
+    },
+    {
+      "slug": "pins",
+      "category": "tactics",
+      "title": "Pins: the piece that cannot move",
+      "summary": "A pinned piece shields a more valuable piece behind it, so it is stuck.",
+      "level": "Beginner",
+      "minutes": 4,
+      "sections": [
+        {
+          "heading": "Pinned to the king",
+          "paragraphs": [
+            "When a piece stands between an attacker and its own king, moving it would expose the king to check. That is illegal, so the piece is frozen.",
+            "A frozen piece is an easy target. Attack it again, ideally with a pawn."
+          ],
+          "diagram": {
+            "fen": "4k3/8/2n5/8/B2P4/8/8/4K3 w - - 0 1",
+            "caption": "The bishop on a4 lines up with the knight on c6 and the king on e8.",
+            "steps": [
+              {
+                "uci": "d4d5",
+                "san": "d5",
+                "caption": "The pawn attacks the knight. The knight cannot run: it is pinned."
+              },
+              {
+                "uci": "e8d8",
+                "san": "Kd8",
+                "caption": "Black steps out of the pin, but it is too late for the knight."
+              },
+              {
+                "uci": "d5c6",
+                "san": "dxc6",
+                "caption": "White wins the knight for nothing."
+              }
+            ],
+            "expect": "white-wins"
+          }
+        }
+      ],
+      "takeaway": "When a piece stands in front of a king or queen on a line, look for a way to attack it once more."
+    },
+    {
+      "slug": "skewers",
+      "category": "tactics",
+      "title": "Skewers: attack through a piece",
+      "summary": "A skewer hits a valuable piece first. When it moves away, the piece behind it falls.",
+      "level": "Beginner",
+      "minutes": 3,
+      "sections": [
+        {
+          "heading": "King first, queen behind",
+          "paragraphs": [
+            "A skewer is a pin turned around: the more valuable piece is in front. A check is the classic skewer, because the king must step aside.",
+            "Rooks, bishops, and queens can all skewer, since they attack along lines."
+          ],
+          "diagram": {
+            "fen": "7R/8/8/4k3/8/8/4q3/K7 w - - 0 1",
+            "caption": "Black's king and queen stand on the same file.",
+            "steps": [
+              {
+                "uci": "h8e8",
+                "san": "Re8+",
+                "caption": "The rook checks along the e-file. The queen is behind the king."
+              },
+              {
+                "uci": "e5d5",
+                "san": "Kd5",
+                "caption": "The king must step off the file."
+              },
+              {
+                "uci": "e8e2",
+                "san": "Rxe2",
+                "caption": "The rook takes the queen."
+              }
+            ],
+            "expect": "white-wins"
+          }
+        }
+      ],
+      "takeaway": "When the enemy king and another piece share a line, check along that line."
+    },
+    {
+      "slug": "discovered-attacks",
+      "category": "tactics",
+      "title": "Discovered attacks: two threats in one move",
+      "summary": "Move one piece out of the way and a second piece behind it attacks.",
+      "level": "Intermediate",
+      "minutes": 4,
+      "sections": [
+        {
+          "heading": "Discovered check",
+          "paragraphs": [
+            "When a piece steps off a line, the rook, bishop, or queen behind it suddenly attacks. If that attack is a check, the moving piece can grab almost anything, because the king must be dealt with first."
+          ],
+          "diagram": {
+            "fen": "4k3/8/8/8/q3N3/8/8/4R1K1 w - - 0 1",
+            "caption": "White's knight stands between the rook on e1 and Black's king on e8.",
+            "steps": [
+              {
+                "uci": "e4c5",
+                "san": "Nc5+",
+                "caption": "The knight jumps away. The rook gives check, and the knight now attacks the queen."
+              },
+              {
+                "uci": "e8f7",
+                "san": "Kf7",
+                "caption": "Black has to answer the check."
+              },
+              {
+                "uci": "c5a4",
+                "san": "Nxa4",
+                "caption": "The knight takes the queen."
+              }
+            ],
+            "expect": "white-wins"
+          }
+        }
+      ],
+      "takeaway": "Notice when one of your pieces blocks your own rook, bishop, or queen. Moving it with a threat can create two attacks at once."
+    },
+    {
+      "slug": "back-rank-mate",
+      "category": "checkmates",
+      "title": "The back-rank mate",
+      "summary": "A castled king behind three unmoved pawns can be mated by a single rook.",
+      "level": "Beginner",
+      "minutes": 3,
+      "sections": [
+        {
+          "heading": "Trapped by its own pawns",
+          "paragraphs": [
+            "Pawns in front of a castled king keep it safe from the front, but they also block its escape. A rook or queen on the back rank can then give mate."
+          ],
+          "diagram": {
+            "fen": "6k1/5ppp/8/8/8/8/5PPP/3R2K1 w - - 0 1",
+            "caption": "Black's king has no free square on the second rank.",
+            "steps": [
+              {
+                "uci": "d1d8",
+                "san": "Rd8#",
+                "caption": "Checkmate. The king's own pawns hold it in place."
+              }
+            ],
+            "expect": "checkmate"
+          }
+        },
+        {
+          "heading": "Make an escape square",
+          "paragraphs": [
+            "One quiet pawn move, often h6 or h3, gives the king a square to breathe. The same rook check now does nothing."
+          ],
+          "diagram": {
+            "fen": "6k1/5pp1/7p/8/8/8/5PPP/3R2K1 w - - 0 1",
+            "caption": "Black has played h6 earlier. The king has a square on h7.",
+            "steps": [
+              {
+                "uci": "d1d8",
+                "san": "Rd8+",
+                "caption": "The same check."
+              },
+              {
+                "uci": "g8h7",
+                "san": "Kh7",
+                "caption": "The king steps to h7. No mate."
+              }
+            ],
+            "expect": "not-mate"
+          }
+        }
+      ],
+      "takeaway": "When the queens and rooks start to trade, check your back rank. Give your king a square before it becomes urgent."
+    },
+    {
+      "slug": "smothered-mate",
+      "category": "checkmates",
+      "title": "The smothered mate",
+      "summary": "A king boxed in by its own pieces can be mated by one knight.",
+      "level": "Intermediate",
+      "minutes": 3,
+      "sections": [
+        {
+          "heading": "No room to move",
+          "paragraphs": [
+            "A knight check cannot be blocked. If the king has no empty square to step to, a single knight is enough.",
+            "This pattern appears most often against a king in the corner, next to its own rook and pawns."
+          ],
+          "diagram": {
+            "fen": "6rk/6pp/7N/8/8/8/8/6K1 w - - 0 1",
+            "caption": "Black's king on h8 is surrounded by its own rook and pawns.",
+            "steps": [
+              {
+                "uci": "h6f7",
+                "san": "Nf7#",
+                "caption": "Checkmate. The knight's check cannot be blocked, and nothing can take it."
+              }
+            ],
+            "expect": "checkmate"
+          }
+        }
+      ],
+      "takeaway": "When the enemy king sits in a corner surrounded by its own pieces, look for a knight check."
+    },
+    {
+      "slug": "two-rook-mate",
+      "category": "checkmates",
+      "title": "The two-rook ladder",
+      "summary": "Two rooks take turns checking and walk the king to the edge of the board.",
+      "level": "Beginner",
+      "minutes": 4,
+      "sections": [
+        {
+          "heading": "Climb one rank at a time",
+          "paragraphs": [
+            "One rook guards a rank so the king cannot step back. The other rook checks on the next rank, pushing the king one step further. Then they swap jobs.",
+            "Keep both rooks far from the king, so it can never attack them."
+          ],
+          "diagram": {
+            "fen": "8/8/8/1k6/6R1/7R/8/6K1 w - - 0 1",
+            "caption": "The rook on g4 already guards the fourth rank.",
+            "steps": [
+              {
+                "uci": "h3h5",
+                "san": "Rh5+",
+                "caption": "Check on the fifth rank. The king cannot go down past g4's rank."
+              },
+              {
+                "uci": "b5c6",
+                "san": "Kc6",
+                "caption": "The king goes up a rank."
+              },
+              {
+                "uci": "g4g6",
+                "san": "Rg6+",
+                "caption": "The other rook checks on the sixth rank."
+              },
+              {
+                "uci": "c6d7",
+                "san": "Kd7",
+                "caption": "Up again."
+              },
+              {
+                "uci": "h5h7",
+                "san": "Rh7+",
+                "caption": "Check on the seventh rank."
+              },
+              {
+                "uci": "d7e8",
+                "san": "Ke8",
+                "caption": "The king reaches the edge."
+              },
+              {
+                "uci": "g6g8",
+                "san": "Rg8#",
+                "caption": "Checkmate. One rook checks, the other guards the seventh rank."
+              }
+            ],
+            "expect": "checkmate"
+          }
+        }
+      ],
+      "takeaway": "Rooks work as a pair: one cuts off, one checks. If the king gets close to a rook, move that rook to the far side of the board."
+    },
+    {
+      "slug": "open-files",
+      "category": "strategy",
+      "title": "Rooks belong on open files",
+      "summary": "A file with no pawns on it is a highway for your rooks into the enemy camp.",
+      "level": "Intermediate",
+      "minutes": 4,
+      "sections": [
+        {
+          "heading": "Take the open file, then invade",
+          "paragraphs": [
+            "Rooks are weak behind their own pawns. On a file with no pawns, they reach all the way to the other side.",
+            "The seventh rank (the second rank for Black) is the usual target: the opponent's pawns stand there and cannot defend each other sideways.",
+            "An open file rarely wins by force. It gives small, lasting pressure that grows when the opponent's pieces get tied down."
+          ],
+          "diagram": {
+            "fen": "5rk1/pp3ppp/4p3/8/8/4P3/PP3PPP/3R2K1 w - - 0 1",
+            "caption": "The d-file is open. White's rook stands on it; Black's rook is behind its own pawns.",
+            "steps": [
+              {
+                "uci": "d1d7",
+                "san": "Rd7",
+                "caption": "The rook runs to the seventh rank and attacks the pawn on b7."
+              },
+              {
+                "uci": "f8b8",
+                "san": "Rb8",
+                "caption": "Black's rook has to go back to guard b7. It is now a passive defender."
+              },
+              {
+                "uci": "g1f1",
+                "san": "Kf1",
+                "caption": "White uses the time to bring the king toward the center. The pressure stays, and Black's rook stays tied down."
+              }
+            ],
+            "expect": "balanced"
+          }
+        }
+      ],
+      "takeaway": "When a file opens, ask whose rook gets there first. A rook on the seventh rank ties down your opponent's pieces even when material is equal."
+    },
+    {
+      "slug": "outposts",
+      "category": "strategy",
+      "title": "Knights love outposts",
+      "summary": "A square no enemy pawn can attack is the perfect home for a knight.",
+      "level": "Intermediate",
+      "minutes": 3,
+      "sections": [
+        {
+          "heading": "A square that pawns cannot reach",
+          "paragraphs": [
+            "Pawns only move forward, so once a pawn passes a square, it can never attack that square again. A knight placed there cannot be chased by pawns.",
+            "From the center of the board, a knight on an outpost attacks eight squares and blocks the opponent's plans."
+          ],
+          "diagram": {
+            "fen": "r2q1rk1/pp2bppp/3p1n2/4p3/4P3/2N5/PPP1BPPP/R2Q1RK1 w - - 0 1",
+            "caption": "Black has no c-pawn, and the e-pawn has already passed e6. No black pawn can ever attack d5.",
+            "steps": [
+              {
+                "uci": "c3d5",
+                "san": "Nd5",
+                "caption": "The knight settles on d5. Only Black's pieces can challenge it, and trading gives White a strong pawn there."
+              }
+            ],
+            "expect": "balanced"
+          }
+        }
+      ],
+      "takeaway": "Look for holes in your opponent's pawns: squares no pawn can guard. Bring a knight there, and support it with a pawn."
+    },
+    {
+      "slug": "passed-pawns",
+      "category": "strategy",
+      "title": "Passed pawns must be pushed",
+      "summary": "A pawn with no enemy pawn in front of it or beside it can run to promote.",
+      "level": "Beginner",
+      "minutes": 4,
+      "sections": [
+        {
+          "heading": "Outside the square",
+          "paragraphs": [
+            "Draw a square from the pawn to its promotion rank, along the diagonal. If the enemy king cannot step into that square on its move, it can never catch the pawn."
+          ],
+          "diagram": {
+            "fen": "8/5k2/8/1P6/8/8/5K2/8 w - - 0 1",
+            "caption": "The square of the b5 pawn runs from b5 to e8. Black's king on f7 is outside it.",
+            "steps": [
+              {
+                "uci": "b5b6",
+                "san": "b6",
+                "caption": "The pawn runs. Its square shrinks to b6 to d8."
+              },
+              {
+                "uci": "f7e7",
+                "san": "Ke7",
+                "caption": "The king chases, one step behind."
+              },
+              {
+                "uci": "b6b7",
+                "san": "b7",
+                "caption": "One step from the end."
+              },
+              {
+                "uci": "e7d7",
+                "san": "Kd7",
+                "caption": "Still too far: the king cannot reach b8 in time."
+              },
+              {
+                "uci": "b7b8q",
+                "san": "b8=Q",
+                "caption": "The pawn promotes to a queen."
+              }
+            ],
+            "expect": "white-wins"
+          }
+        },
+        {
+          "heading": "Inside the square",
+          "paragraphs": [
+            "Move the king one file closer, with Black to move, and it steps inside the square. Now the pawn is caught."
+          ],
+          "diagram": {
+            "fen": "8/8/3k4/1P6/8/8/6K1/8 b - - 0 1",
+            "caption": "Black's king on d6 is inside the square of the pawn, and it is Black's move.",
+            "steps": [
+              {
+                "uci": "d6c5",
+                "san": "Kc5",
+                "caption": "The king attacks the pawn."
+              },
+              {
+                "uci": "b5b6",
+                "san": "b6",
+                "caption": "The pawn tries to run."
+              },
+              {
+                "uci": "c5b6",
+                "san": "Kxb6",
+                "caption": "Caught. The game is a draw."
+              }
+            ],
+            "expect": "draw"
+          }
+        }
+      ],
+      "takeaway": "Count before you chase: if the king is outside the square, push the pawn and promote."
+    },
+    {
+      "slug": "opposition",
+      "category": "endgames",
+      "title": "The opposition in king and pawn endings",
+      "summary": "When the kings face each other with one square between them, the side that does not have to move wins the standoff.",
+      "level": "Intermediate",
+      "minutes": 6,
+      "sections": [
+        {
+          "heading": "Black to move: White wins",
+          "paragraphs": [
+            "The kings stand on e5 and e7 with one square between them. This is called the opposition. The player who must move has to step aside and let the other king through.",
+            "Here Black must move, so White's king gets to the key squares in front of the pawn."
+          ],
+          "diagram": {
+            "fen": "8/4k3/8/4K3/4P3/8/8/8 b - - 0 1",
+            "caption": "White has the opposition: it is Black's move.",
+            "steps": [
+              {
+                "uci": "e7d7",
+                "san": "Kd7",
+                "caption": "Black has to give way."
+              },
+              {
+                "uci": "e5f6",
+                "san": "Kf6",
+                "caption": "White's king goes forward beside the pawn's path."
+              },
+              {
+                "uci": "d7d6",
+                "san": "Kd6",
+                "caption": "Black tries to stay close."
+              },
+              {
+                "uci": "e4e5",
+                "san": "e5+",
+                "caption": "The pawn advances with check, protected by its king."
+              },
+              {
+                "uci": "d6d7",
+                "san": "Kd7",
+                "caption": "Black blocks the way forward as best it can."
+              },
+              {
+                "uci": "f6f7",
+                "san": "Kf7",
+                "caption": "White's king controls e7 and e8. The pawn will walk through."
+              }
+            ],
+            "expect": "white-wins"
+          }
+        },
+        {
+          "heading": "White to move: a draw",
+          "paragraphs": [
+            "Same position, but White must move. Black keeps the opposition, and White's king never gets in front of the pawn. The game ends in stalemate."
+          ],
+          "diagram": {
+            "fen": "8/4k3/8/4K3/4P3/8/8/8 w - - 0 1",
+            "caption": "The same position with White to move.",
+            "steps": [
+              {
+                "uci": "e5d5",
+                "san": "Kd5",
+                "caption": "White steps forward on the side."
+              },
+              {
+                "uci": "e7d7",
+                "san": "Kd7",
+                "caption": "Black takes the opposition back: the kings face each other again."
+              },
+              {
+                "uci": "e4e5",
+                "san": "e5",
+                "caption": "White tries the pawn."
+              },
+              {
+                "uci": "d7e7",
+                "san": "Ke7",
+                "caption": "Black's king stands right in front of it."
+              },
+              {
+                "uci": "e5e6",
+                "san": "e6",
+                "caption": "The pawn moves on."
+              },
+              {
+                "uci": "e7e8",
+                "san": "Ke8",
+                "caption": "Black's king steps straight back and keeps blocking."
+              },
+              {
+                "uci": "d5d6",
+                "san": "Kd6",
+                "caption": "White's king supports the pawn."
+              },
+              {
+                "uci": "e8d8",
+                "san": "Kd8",
+                "caption": "Black takes the opposition again."
+              },
+              {
+                "uci": "e6e7",
+                "san": "e7+",
+                "caption": "The pawn checks."
+              },
+              {
+                "uci": "d8e8",
+                "san": "Ke8",
+                "caption": "The king steps in front of the pawn."
+              },
+              {
+                "uci": "d6e6",
+                "san": "Ke6",
+                "caption": "Stalemate: Black is not in check but has no legal move. A draw."
+              }
+            ],
+            "expect": "stalemate"
+          }
+        }
+      ],
+      "takeaway": "In king and pawn endings, the king leads and the pawn follows. Try to get your king in front of the pawn, and count who has the opposition."
+    },
+    {
+      "slug": "rook-behind-passed-pawn",
+      "category": "endgames",
+      "title": "Rooks behind passed pawns",
+      "summary": "In rook endings, the best place for a rook is behind a passed pawn: its own or the enemy's.",
+      "level": "Intermediate",
+      "minutes": 3,
+      "sections": [
+        {
+          "heading": "Behind, not in front",
+          "paragraphs": [
+            "A rook behind its own passed pawn gains range with every pawn step. A rook in front of the enemy pawn is stuck guarding one square and does nothing else.",
+            "Here White's rook on a1 pushes from behind. Black's rook on a8 must stay in front of the pawn, while both sides still have pawns on the other wing."
+          ],
+          "diagram": {
+            "fen": "r5k1/5ppp/8/P7/8/8/5PPP/R5K1 w - - 0 1",
+            "caption": "White's rook is behind the a-pawn; Black's rook is in front of it.",
+            "steps": [
+              {
+                "uci": "a5a6",
+                "san": "a6",
+                "caption": "The pawn advances, and White's rook still covers it from behind."
+              },
+              {
+                "uci": "g8f8",
+                "san": "Kf8",
+                "caption": "Black's king heads over to help stop the pawn."
+              },
+              {
+                "uci": "a6a7",
+                "san": "a7",
+                "caption": "Black's rook is tied to a8 for good. White's king is free to go after Black's pawns."
+              }
+            ],
+            "expect": "white-wins"
+          }
+        }
+      ],
+      "takeaway": "Put your rook behind passed pawns. If you must stop an enemy pawn, attack it from behind too."
+    }
+  ]
+}

@@ -1,0 +1,92 @@
+.panel {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-16);
+  max-width: 48rem;
+  padding: var(--space-16) var(--space-24);
+  border: 1px solid var(--feature-border);
+  border-radius: var(--radius-16);
+  background: var(--surface);
+}
+
+.notice,
+.failed p {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-8);
+}
+
+.notice {
+  max-width: 48rem;
+  padding: var(--space-12) var(--space-16);
+  border: 2px solid var(--info);
+  border-radius: var(--radius-pill);
+  background: var(--info-tint);
+  color: var(--info);
+  font-weight: 500;
+}
+
+.notice svg,
+.failed svg {
+  flex: none;
+  margin-top: 2px;
+}
+
+.failed {
+  display: grid;
+  gap: var(--space-12);
+  max-width: 48rem;
+  padding: var(--space-16) var(--space-24);
+  border: 2px solid var(--error);
+  border-radius: var(--radius-16);
+  background: var(--surface);
+}
+
+.failed p {
+  color: var(--error);
+  font-weight: 700;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-16);
+}
+
+.actions a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+}
+
+.locked {
+  display: grid;
+  gap: var(--space-12);
+  max-width: 48rem;
+  padding: var(--space-16) var(--space-24);
+  border: 2px solid var(--primary);
+  border-radius: var(--radius-16);
+  background: var(--surface);
+}
+
+.locked p {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-8);
+  font-weight: 700;
+}
+
+.locked svg {
+  flex: none;
+  margin-top: 2px;
+}
+
+.locked a {
+  display: inline-flex;
+  align-items: center;
+  width: fit-content;
+  min-height: 44px;
+  font-weight: 700;
+}

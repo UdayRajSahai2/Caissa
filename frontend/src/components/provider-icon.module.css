@@ -1,0 +1,20 @@
+.icon {
+  flex: none;
+}
+
+/* The brand colours need a white ground; forced-colors mode keeps the disc visible with a border. */
+.disc {
+  display: inline-grid;
+  place-items: center;
+  flex: none;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: var(--provider-disc);
+}
+
+@media (forced-colors: active) {
+  .disc {
+    border: 1px solid CanvasText;
+  }
+}

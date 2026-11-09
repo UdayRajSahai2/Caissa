@@ -1,0 +1,79 @@
+.nav {
+  order: 3;
+  flex: 1 0 100%;
+  min-width: 0;
+}
+
+.nav ul {
+  display: flex;
+  gap: var(--space-4) var(--space-8);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  overflow-x: auto;
+}
+
+.nav a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 0 var(--space-12);
+  border-bottom: 3px solid transparent;
+  color: var(--on-header);
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+/* One line only: hover previews the bar the current page uses, never a second text underline. */
+.nav a:hover {
+  border-bottom-color: color-mix(in srgb, var(--on-header) 55%, transparent);
+}
+
+/* Current page: a gold bar and bold text, never color alone (NAV-01, A11-03). */
+.nav a[aria-current="page"] {
+  border-bottom-color: var(--header-current);
+  font-weight: 700;
+}
+
+.nav a:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 2px;
+}
+
+@media (min-width: 1024px) {
+  .nav {
+    order: 0;
+    flex: 1 1 auto;
+  }
+}
+
+/* Signed out: one Sign in link on the header bar. Signed in: the avatar menu (account-menu.module.css). */
+.account {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  /* Holds the place while the session loads, so the theme buttons do not jump when Sign in or the avatar appears. */
+  min-width: 96px;
+  min-height: 44px;
+}
+
+.signIn {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 0 var(--space-16);
+  border: 2px solid var(--header-current);
+  border-radius: var(--radius-pill);
+  color: var(--on-header);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.signIn:hover {
+  background: color-mix(in srgb, var(--header-current) 18%, transparent);
+}
+
+.signIn:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 2px;
+}

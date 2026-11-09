@@ -1,0 +1,25 @@
+.card {
+  display: grid;
+  gap: var(--space-8);
+  padding: var(--space-24);
+  border: 2px solid var(--primary);
+  border-radius: var(--radius-16);
+  background: var(--surface);
+}
+
+.card h2 {
+  font-size: var(--text-xl);
+}
+
+.links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-8) var(--space-24);
+}
+
+.links a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  font-weight: 700;
+}

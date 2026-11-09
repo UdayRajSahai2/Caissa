@@ -1,0 +1,78 @@
+.scroll {
+  width: min(100%, 36rem);
+  max-height: 32rem;
+  overflow: auto;
+  border: 1px solid var(--heat-card-border);
+  border-radius: var(--radius-16);
+  background: var(--heat-card);
+  box-shadow: var(--heat-card-shadow);
+}
+
+.scroll:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 2px;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  color: var(--heat-text);
+  font-variant-numeric: tabular-nums;
+}
+
+.table caption {
+  padding: var(--space-12) var(--space-16);
+  font-weight: 700;
+  text-align: left;
+}
+
+.table th,
+.table td {
+  padding: var(--space-8) var(--space-12);
+  border-top: 1px solid var(--border);
+  text-align: left;
+  vertical-align: middle;
+}
+
+.table thead th {
+  position: sticky;
+  top: 0;
+  background: var(--surface-2);
+  color: var(--text);
+  font-size: var(--text-sm);
+}
+
+.table td {
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+}
+
+.chosen th,
+.chosen td {
+  background: var(--info-tint);
+}
+
+.open {
+  min-width: 44px;
+  min-height: 44px;
+  margin: 0;
+  padding: 0 var(--space-8);
+  border: 2px solid var(--border);
+  border-radius: var(--radius-8);
+  background: transparent;
+  color: var(--text);
+  font-family: var(--font-mono);
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.open[aria-pressed="true"] {
+  border-color: var(--primary);
+  background: var(--primary);
+  color: var(--on-primary);
+}
+
+.open:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 2px;
+}

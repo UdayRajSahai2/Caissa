@@ -1,0 +1,131 @@
+/* Full-bleed hero: the battle plate fills the right half and fades into the page,
+   so text always sits on the plain page color (contrast never depends on the photo). */
+.hero {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  border-bottom: 1px solid var(--border-soft);
+}
+
+.plate {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  max-height: 22rem;
+  width: 100%;
+  -webkit-mask-image: linear-gradient(to bottom, black 55%, transparent);
+  mask-image: linear-gradient(to bottom, black 55%, transparent);
+}
+
+/* The knight stands right of center in the photo; keep it in frame at every crop. */
+.battle {
+  object-fit: cover;
+  object-position: 64% 50%;
+}
+
+.heroInner {
+  position: relative;
+  padding-block: var(--space-24) var(--space-48);
+}
+
+.intro {
+  display: grid;
+  gap: var(--space-24);
+  max-width: 36rem;
+}
+
+.intro h1 {
+  font-size: var(--text-3xl);
+  line-height: 1.12;
+  max-width: 18ch;
+}
+
+.lead {
+  max-width: 52ch;
+  font-size: var(--text-lg);
+  line-height: 1.5;
+}
+
+.note {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-8);
+  color: var(--text-2);
+  font-size: var(--text-sm);
+}
+
+.note svg {
+  flex: none;
+  margin-top: 3px;
+}
+
+.features {
+  display: grid;
+  gap: var(--space-24);
+  padding-block: var(--space-48) 0;
+}
+
+.features h2 {
+  font-size: var(--text-2xl);
+}
+
+.featureList {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 15rem), 1fr));
+  gap: var(--space-16);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.feature {
+  display: grid;
+  align-content: start;
+  gap: var(--space-12);
+  padding: var(--space-24);
+  border: 1px solid var(--feature-border);
+  border-radius: var(--radius-8);
+  background: var(--feature-face);
+}
+
+.feature h3 {
+  display: flex;
+  align-items: center;
+  gap: var(--space-8);
+  color: var(--primary);
+  font-size: var(--text-lg);
+}
+
+@media (min-width: 768px) {
+  .intro h1 {
+    font-size: var(--text-4xl);
+  }
+}
+
+@media (min-width: 1024px) {
+  .hero {
+    min-height: 34rem;
+    display: grid;
+    align-items: center;
+  }
+
+  /* The photo starts just right of the page center and the text column stops before it
+     (46vw at most), so at every width from 1024px up the text sits on the plain page color. */
+  .plate {
+    position: absolute;
+    inset: 0 0 0 calc(50% + var(--space-32));
+    width: auto;
+    max-height: none;
+    aspect-ratio: auto;
+    z-index: -1;
+    -webkit-mask-image: linear-gradient(to right, transparent, black 30%);
+    mask-image: linear-gradient(to right, transparent, black 30%);
+  }
+
+  .heroInner {
+    padding-block: var(--space-64);
+  }
+
+  .intro {
+    max-width: min(38rem, 46vw);
+  }
+}

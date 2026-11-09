@@ -1,0 +1,119 @@
+.wrap {
+  position: relative;
+}
+
+/* Gold disc on the header: 6.8:1 (light header) and 12.5:1 (dark header) against its surroundings. */
+.avatar {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border: 2px solid var(--header-current);
+  border-radius: var(--radius-pill);
+  background: var(--header-current);
+  color: var(--on-header-current);
+  font: inherit;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  cursor: pointer;
+}
+
+.avatar:hover {
+  box-shadow: 0 0 0 3px var(--header-bg), 0 0 0 5px color-mix(in srgb, var(--header-current) 60%, transparent);
+}
+
+.avatar[aria-expanded="true"] {
+  box-shadow: 0 0 0 3px var(--header-bg), 0 0 0 5px var(--header-current);
+}
+
+.avatar:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 3px;
+}
+
+.panel {
+  position: absolute;
+  top: calc(100% + var(--space-8));
+  right: 0;
+  z-index: 20;
+  display: grid;
+  gap: var(--space-4);
+  min-width: 16rem;
+  padding: var(--space-12);
+  border: 1px solid var(--feature-border);
+  border-radius: var(--radius-8);
+  background: var(--surface);
+  color: var(--text);
+  box-shadow: var(--feature-shadow);
+  /* The header turns --focus gold for its own dark bar; on this light panel that would be faint. */
+  --focus: var(--primary);
+}
+
+.panel[hidden] {
+  display: none;
+}
+
+.name {
+  padding: 0 var(--space-8);
+  font-weight: 700;
+  overflow-wrap: anywhere;
+}
+
+.hint {
+  padding: 0 var(--space-8) var(--space-8);
+  border-bottom: 1px solid var(--border-soft);
+  color: var(--text-2);
+  font-size: var(--text-sm);
+}
+
+.items {
+  display: grid;
+  gap: var(--space-4);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-8);
+  width: 100%;
+  min-height: 44px;
+  padding: 0 var(--space-8);
+  border: 0;
+  border-radius: var(--radius-4);
+  background: transparent;
+  color: var(--text);
+  font: inherit;
+  text-align: left;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.item:hover {
+  background: var(--surface-2);
+}
+
+.item:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 0;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .panel:not([hidden]) {
+    animation: open var(--duration) ease-out;
+  }
+}
+
+@keyframes open {
+  from {
+    opacity: 0;
+    transform: translateY(calc(-1 * var(--space-4)));
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}

@@ -1,0 +1,82 @@
+.trainer {
+  display: grid;
+  gap: var(--space-16);
+  min-width: 0;
+}
+
+.trainer h3,
+.trainer p {
+  margin: 0;
+}
+
+.bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: var(--space-16);
+}
+
+.group {
+  composes: group from "./heat-insight.module.css";
+}
+
+.switch {
+  composes: switch from "./heat-insight.module.css";
+}
+
+.count {
+  font-variant-numeric: tabular-nums;
+  font-weight: 700;
+}
+
+.progress {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: var(--space-8) var(--space-16);
+}
+
+.progress h3 {
+  color: var(--primary);
+  font-size: var(--text-xl);
+}
+
+.progress p {
+  color: var(--text-2);
+  font-variant-numeric: tabular-nums;
+}
+
+.nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-8);
+}
+
+.done {
+  display: grid;
+  justify-items: start;
+  gap: var(--space-12);
+  padding: var(--space-24);
+  border: 1px solid var(--feature-border);
+  border-radius: var(--radius-16);
+  background: var(--surface);
+  max-width: 40rem;
+}
+
+.schedule,
+.tag {
+  color: var(--text-2);
+  font-size: var(--text-sm);
+}
+
+.tag {
+  padding: var(--space-4) var(--space-8);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-pill);
+}
+
+.feedback {
+  color: var(--heading);
+  font-weight: 700;
+}

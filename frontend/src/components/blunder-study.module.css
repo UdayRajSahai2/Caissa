@@ -1,0 +1,146 @@
+.study {
+  display: grid;
+  gap: var(--space-16);
+  max-width: 60rem;
+}
+
+.heading {
+  display: flex;
+  align-items: center;
+  gap: var(--space-8);
+  margin: 0;
+  color: var(--error);
+}
+
+.clock {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-4);
+  color: var(--warning);
+}
+
+.stage {
+  display: grid;
+  gap: var(--space-16);
+  align-items: start;
+}
+
+.copy {
+  display: grid;
+  justify-items: start;
+  gap: var(--space-8);
+  max-width: 36rem;
+}
+
+.copy p,
+.pattern p {
+  margin: 0;
+}
+
+.move {
+  font-family: var(--font-display);
+  font-size: var(--text-2xl);
+  line-height: 1.2;
+}
+
+.meta,
+.hint {
+  color: var(--text-2);
+  font-size: var(--text-sm);
+}
+
+.legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-12) var(--space-16);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  color: var(--text-2);
+  font-size: var(--text-sm);
+}
+
+.legend li {
+  display: flex;
+  align-items: center;
+  gap: var(--space-8);
+}
+
+.playedMark,
+.betterMark {
+  width: var(--space-24);
+  height: var(--space-8);
+  border-radius: var(--radius-pill);
+}
+
+.playedMark {
+  background: var(--error);
+}
+
+.betterMark {
+  background: var(--success);
+}
+
+.nav {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-8);
+}
+
+.progress {
+  min-width: var(--space-64);
+  text-align: center;
+  font-variant-numeric: tabular-nums;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-8);
+}
+
+.pattern {
+  display: grid;
+  justify-items: start;
+  gap: var(--space-12);
+  padding-top: var(--space-16);
+  border-top: 1px solid var(--border);
+}
+
+.heat,
+.puzzle {
+  width: min(100%, var(--board-size));
+}
+
+.puzzle {
+  display: grid;
+  justify-items: start;
+  gap: var(--space-8);
+}
+
+.hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.right {
+  color: var(--success);
+}
+
+.wrong {
+  color: var(--error);
+}
+
+@media (min-width: 840px) {
+  .stage {
+    grid-template-columns: minmax(0, var(--board-size)) minmax(16rem, 1fr);
+  }
+}

@@ -1,0 +1,223 @@
+.report {
+  display: grid;
+  gap: var(--space-32);
+  min-width: 0;
+}
+
+.report section {
+  display: grid;
+  gap: var(--space-16);
+  min-width: 0;
+}
+
+.report h3,
+.report h4,
+.report h5,
+.report p {
+  margin: 0;
+}
+
+.report h3 {
+  color: var(--primary);
+  font-size: var(--text-xl);
+}
+
+.report h4 {
+  font-family: var(--font-display);
+  font-size: var(--text-lg);
+}
+
+.head {
+  display: grid;
+  gap: var(--space-8);
+}
+
+.basis {
+  color: var(--text-2);
+}
+
+/* One disclosure explains both terms (DSN-09); it opens by click, Enter, or Space, never on hover. */
+.terms {
+  max-width: 65ch;
+}
+
+.terms summary {
+  width: fit-content;
+  min-height: 44px;
+  padding-block: var(--space-8);
+  color: var(--primary);
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.terms summary:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 2px;
+}
+
+.terms dl {
+  display: grid;
+  gap: var(--space-4) var(--space-16);
+  margin: var(--space-4) 0 0;
+  padding: var(--space-16);
+  border: 1px solid var(--feature-border);
+  border-radius: var(--radius-8);
+  background: var(--feature-face);
+}
+
+.terms dt {
+  font-weight: 700;
+}
+
+.terms dd {
+  margin: 0 0 var(--space-8);
+}
+
+.terms dd:last-child {
+  margin-bottom: 0;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 18rem), 1fr));
+  gap: var(--space-16);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.card {
+  display: grid;
+  align-content: start;
+  gap: var(--space-8);
+  padding: var(--space-16) var(--space-24) var(--space-24);
+  border: 1px solid var(--feature-border);
+  border-radius: var(--radius-8);
+  background: var(--feature-face);
+  max-width: 65ch;
+}
+
+.card h5 {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-8);
+  font-size: var(--text-md);
+  font-weight: 700;
+  line-height: 1.35;
+}
+
+.card h5 svg {
+  flex: none;
+  margin-top: 1px;
+  color: var(--primary);
+}
+
+.figure {
+  color: var(--primary);
+  font-size: var(--text-lg);
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  line-height: 1.3;
+}
+
+.scroll {
+  composes: scroll from "./heat-table.module.css";
+  width: min(100%, 48rem);
+  max-height: none;
+}
+
+.table {
+  composes: table from "./heat-table.module.css";
+}
+
+.costliest {
+  display: grid;
+  gap: var(--space-8);
+  max-width: 48rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.costliest li {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: var(--space-4) var(--space-16);
+  padding-bottom: var(--space-8);
+  border-bottom: 1px solid var(--border);
+}
+
+.moveLine {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-8);
+}
+
+.move {
+  font-family: var(--font-mono);
+}
+
+.badge {
+  composes: badge from "./heat-insight.module.css";
+}
+
+/* Orange text at 13px misses 4.5:1 on paper, so the warning color marks the border and icon only. */
+.clock {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-4);
+  padding: 2px var(--space-8);
+  border: 1px solid var(--warning);
+  border-radius: var(--radius-4);
+  color: var(--text);
+  font-size: var(--text-xs);
+  font-weight: 700;
+}
+
+.clock svg {
+  color: var(--warning);
+}
+
+
+.loss {
+  color: var(--text-2);
+  font-variant-numeric: tabular-nums;
+  text-align: right;
+}
+
+.better {
+  grid-column: 1 / -1;
+  color: var(--text-2);
+}
+
+.download {
+  padding: var(--space-24);
+  border: 1px solid var(--feature-border);
+  border-radius: var(--radius-16);
+  background: var(--surface);
+  max-width: 48rem;
+}
+
+.note {
+  color: var(--text-2);
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-12);
+}
+
+.failed {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-8);
+  color: var(--error);
+  font-weight: 700;
+}
+
+.failed svg {
+  flex: none;
+  margin-top: 2px;
+}

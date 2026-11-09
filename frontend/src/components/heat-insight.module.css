@@ -1,0 +1,224 @@
+.panel {
+  display: grid;
+  align-content: start;
+  gap: var(--space-16);
+  width: 100%;
+  align-self: start;
+  padding: var(--space-16);
+  border: 1px solid var(--heat-card-border);
+  border-radius: var(--radius-16);
+  background: var(--heat-card);
+  box-shadow: var(--heat-card-shadow);
+  color: var(--heat-text);
+}
+
+.panel h3,
+.panel p {
+  margin: 0;
+}
+
+.takeaway {
+  font-size: var(--text-lg);
+  line-height: 1.35;
+}
+
+.groups {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-16);
+}
+
+.group {
+  display: grid;
+  gap: var(--space-4);
+}
+
+.group p {
+  color: var(--text-2);
+  font-size: var(--text-xs);
+}
+
+.switch {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+}
+
+.switch button,
+.pieces {
+  justify-self: start;
+  min-height: 44px;
+  width: auto;
+  margin: 0;
+  padding: var(--space-8) var(--space-12);
+  border: 2px solid var(--border);
+  border-radius: var(--radius-8);
+  background: transparent;
+  color: var(--text);
+  font: inherit;
+  cursor: pointer;
+}
+
+.switch button[aria-pressed="true"],
+.pieces[aria-pressed="true"] {
+  border-color: var(--primary);
+  background: var(--primary);
+  color: var(--on-primary);
+}
+
+.switch button:focus-visible,
+.pieces:focus-visible,
+.hot:focus-visible,
+.games:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 2px;
+}
+
+.hotList {
+  display: grid;
+  gap: var(--space-8);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.hot {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--space-12);
+  width: 100%;
+  margin: 0;
+  padding: var(--space-8) var(--space-12);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-8);
+  background: transparent;
+  color: var(--text);
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.hot[aria-pressed="true"] {
+  border-color: var(--primary);
+  background: var(--primary);
+  color: var(--on-primary);
+}
+
+.hot[aria-pressed="true"] .square,
+.hot[aria-pressed="true"] .meta {
+  color: inherit;
+}
+
+/* Amber on paper is about 3.4:1, under the 4.5:1 body-text bar (A11-02), so square names use ink blue. */
+.square {
+  color: var(--primary);
+  font-family: var(--font-mono);
+  font-weight: 700;
+}
+
+.meta {
+  color: var(--text-2);
+  font-variant-numeric: tabular-nums;
+}
+
+.phases {
+  display: grid;
+  gap: var(--space-8);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.phases li {
+  display: grid;
+  grid-template-columns: 7rem minmax(0, 1fr) auto;
+  gap: var(--space-8);
+  align-items: center;
+}
+
+.track {
+  height: var(--space-8);
+  border-radius: var(--radius-pill);
+  background: var(--heat-track);
+  overflow: hidden;
+}
+
+.fill {
+  display: block;
+  height: 100%;
+  width: calc(var(--share) * 1%);
+  border-radius: inherit;
+  background: var(--heat-bar);
+}
+
+.games {
+  display: grid;
+  gap: var(--space-8);
+  max-height: 16rem;
+  margin: 0;
+  padding: 0;
+  overflow: auto;
+  list-style: none;
+}
+
+.games li {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--space-12);
+  align-items: flex-start;
+  padding-bottom: var(--space-8);
+  border-bottom: 1px solid var(--border);
+}
+
+.gameLine {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-8);
+}
+
+/* Beside the board (library-heatmap switches to two columns at 960px) the panel
+   takes the board card's height and never sets it: height 0 keeps it out of the
+   row size, min-height 100% fills the row. The game list soaks up the spare
+   height and scrolls inside, so both cards always share a top and bottom edge. */
+@media (min-width: 960px) {
+  .panel {
+    display: flex;
+    flex-direction: column;
+    align-self: stretch;
+    height: 0;
+    min-height: 100%;
+    overflow: auto;
+  }
+
+  .pieces {
+    align-self: flex-start;
+  }
+
+  .drill {
+    display: flex;
+    flex: 1 1 auto;
+    flex-direction: column;
+    gap: var(--space-8);
+    min-height: 12rem;
+  }
+
+  .drill .games {
+    flex: 1 1 0;
+    max-height: none;
+    min-height: 0;
+  }
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-4);
+  padding: 2px var(--space-8);
+  border-radius: var(--radius-4);
+  background: color-mix(in srgb, var(--error) 14%, transparent);
+  color: var(--error);
+  font-size: var(--text-xs);
+  font-weight: 700;
+  line-height: 1.2;
+}

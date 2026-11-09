@@ -1,0 +1,39 @@
+.field {
+  display: grid;
+  gap: var(--space-8);
+}
+
+.label {
+  font-weight: 500;
+}
+
+.input {
+  min-height: 44px;
+  width: 100%;
+  padding: var(--space-8) var(--space-12);
+  border: 2px solid var(--border);
+  border-radius: var(--radius-4);
+  background: var(--surface);
+  color: var(--text);
+  font: inherit;
+}
+
+.hint {
+  color: var(--text-2);
+  font-size: var(--text-sm);
+}
+
+.error {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-8);
+  color: var(--error);
+  font-weight: 500;
+  margin: 0;
+}
+
+.icon {
+  width: 24px;
+  height: 24px;
+  flex: none;
+}

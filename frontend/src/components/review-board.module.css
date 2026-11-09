@@ -1,0 +1,191 @@
+.frame {
+  width: min(100%, var(--board-size));
+  aspect-ratio: 1;
+}
+
+.board {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  grid-template-rows: repeat(8, 1fr);
+  width: 100%;
+  height: 100%;
+  border: 1px solid var(--on-board);
+  border-radius: var(--radius-4);
+  overflow: hidden;
+}
+
+.square {
+  position: relative;
+  display: grid;
+  place-items: center;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  line-height: 1;
+}
+
+.light {
+  background: var(--board-light);
+}
+
+.dark {
+  background: var(--board-dark);
+}
+
+button.square {
+  cursor: pointer;
+}
+
+.heat1 {
+  box-shadow: inset 0 0 0 100vmax color-mix(in srgb, var(--error) 28%, transparent);
+}
+
+.heat2 {
+  box-shadow: inset 0 0 0 100vmax color-mix(in srgb, var(--error) 48%, transparent);
+}
+
+.heat3 {
+  box-shadow: inset 0 0 0 100vmax color-mix(in srgb, var(--error) 68%, transparent);
+}
+
+.traveled {
+  box-shadow: inset 0 0 0 100vmax color-mix(in srgb, var(--board-highlight) 50%, transparent);
+}
+
+.selected,
+.hint {
+  box-shadow: inset 0 0 0 100vmax color-mix(in srgb, var(--board-highlight) 88%, transparent);
+}
+
+.wrong {
+  box-shadow: inset 0 0 0 100vmax color-mix(in srgb, var(--error) 55%, transparent);
+}
+
+.coord {
+  position: absolute;
+  z-index: 1;
+  font-family: var(--font-body);
+  font-size: var(--text-xs);
+  font-weight: 700;
+  line-height: 1;
+  pointer-events: none;
+}
+
+.rank {
+  top: 1px;
+  left: 2px;
+}
+
+.file {
+  right: 2px;
+  bottom: 1px;
+}
+
+.light .coord {
+  color: var(--board-dark);
+}
+
+.dark .coord {
+  color: var(--board-light);
+}
+
+.badge {
+  position: relative;
+  z-index: 1;
+  min-width: var(--space-24);
+  padding: 0 var(--space-4);
+  border-radius: var(--radius-pill);
+  background: var(--surface);
+  color: var(--text);
+  font-family: var(--font-body);
+  font-size: var(--text-xs);
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.pieces {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.piece {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 12.5%;
+  height: 12.5%;
+  display: grid;
+  place-items: center;
+  transition: transform var(--duration) ease-out;
+}
+
+.lifted {
+  z-index: 3;
+  filter: drop-shadow(0 8px 4px color-mix(in srgb, var(--on-board) 35%, transparent));
+}
+
+.arrows {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: visible;
+}
+
+.halo {
+  stroke: var(--board-light);
+  stroke-width: 0.26;
+  fill: none;
+  stroke-linecap: round;
+}
+
+.shaft {
+  stroke: currentColor;
+  stroke-width: 0.16;
+  fill: none;
+  stroke-linecap: round;
+}
+
+.haloHead {
+  fill: var(--board-light);
+}
+
+.head {
+  fill: currentColor;
+}
+
+.blunder {
+  color: var(--error);
+}
+
+.best {
+  color: var(--success);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .piece {
+    transition: none;
+  }
+}
+
+/* Dragging (A11-06 keeps click and keyboard): touches on the board move pieces, not the page. */
+.draggable {
+  touch-action: none;
+}
+
+.draggable button {
+  cursor: grab;
+}
+
+.dragging {
+  z-index: 4;
+  transition: none;
+  transform: translate(-50%, -50%) scale(1.12);
+  filter: drop-shadow(0 10px 6px color-mix(in srgb, var(--on-board) 35%, transparent));
+  cursor: grabbing;
+}

@@ -1,0 +1,156 @@
+.features {
+  display: grid;
+  gap: var(--space-32);
+}
+
+.features h2 {
+  font-size: var(--text-2xl);
+}
+
+.grid {
+  display: grid;
+  align-items: stretch;
+  gap: var(--space-16);
+}
+
+.action {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: var(--space-24);
+  display: grid;
+  align-content: start;
+  gap: var(--space-12);
+  border: 1px solid var(--feature-border);
+  border-radius: var(--radius-8);
+  background: var(--feature-face);
+  color: var(--text);
+  text-align: left;
+  font: inherit;
+  cursor: pointer;
+}
+
+.action h3 {
+  display: flex;
+  align-items: center;
+  gap: var(--space-8);
+  margin: 0;
+  color: var(--primary);
+  font-size: var(--text-lg);
+}
+
+.body {
+  color: var(--text);
+}
+
+.action:hover {
+  border-color: var(--primary);
+}
+
+.action:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 3px;
+}
+
+.action[aria-selected="true"] {
+  background: var(--primary);
+  color: var(--on-primary);
+  border-color: var(--primary);
+}
+
+.action[aria-selected="true"] h3,
+.action[aria-selected="true"] .body,
+.viewing {
+  color: var(--on-primary);
+}
+
+.action[aria-selected="true"] h3 {
+  padding-right: calc(var(--space-64) + var(--space-16));
+}
+
+.viewing {
+  position: absolute;
+  top: var(--space-12);
+  right: var(--space-12);
+  font-size: var(--text-xs);
+  font-weight: 700;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .action:not([aria-selected="true"]):hover {
+    transform: translateY(-1px);
+  }
+}
+
+.panel {
+  display: grid;
+  gap: var(--space-12);
+}
+
+.panel p {
+  margin: 0;
+}
+
+.done {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-8);
+  color: var(--success);
+  font-weight: 600;
+}
+
+.done svg {
+  flex: none;
+  margin-top: 2px;
+}
+
+@media (min-width: 640px) {
+  .grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1200px) {
+  .grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: var(--space-24);
+  }
+}
+
+.progressBlock {
+  display: grid;
+  gap: var(--space-8);
+  max-width: 40rem;
+}
+
+.progressBlock p {
+  margin: 0;
+}
+
+.progressBar {
+  width: 100%;
+  height: 10px;
+  appearance: none;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-pill);
+  background: var(--surface-2);
+  overflow: hidden;
+}
+
+.progressBar::-webkit-progress-bar {
+  background: var(--surface-2);
+}
+
+.progressBar::-webkit-progress-value {
+  background: var(--primary);
+}
+
+.progressBar::-moz-progress-bar {
+  background: var(--primary);
+}
+
+.sharpens {
+  color: var(--text-2);
+  font-size: var(--text-sm);
+}

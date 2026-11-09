@@ -1,0 +1,38 @@
+# Secrets: never pushed. Only the .env.example templates are committed.
+.env
+.env.*
+!.env.example
+frontend/.env*
+!frontend/.env.example
+*.pem
+*.key
+*secrets*
+
+# Local plan docs (AGENTS.md)
+*-plan.md
+
+# Python
+.venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Next.js and frontend tooling
+frontend/node_modules/
+frontend/.next/
+frontend/.next-build-check/
+frontend/next-env.d.ts
+*.tsbuildinfo
+frontend/coverage/
+frontend/playwright-report/
+frontend/test-results/
+frontend/blob-report/
+.vercel/
+
+# OS and editor noise
+.DS_Store
+Thumbs.db
+*.log

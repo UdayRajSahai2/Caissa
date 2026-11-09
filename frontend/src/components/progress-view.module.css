@@ -1,0 +1,221 @@
+.view {
+  display: grid;
+  gap: var(--space-48);
+}
+
+.view h2,
+.view p {
+  margin: 0;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+  gap: var(--space-16);
+}
+
+.card {
+  display: grid;
+  align-content: start;
+  gap: var(--space-8);
+  padding: var(--space-24);
+  border: 1px solid var(--feature-border);
+  border-radius: var(--radius-16);
+  background: var(--feature-face);
+}
+
+.rank {
+  border: 2px solid var(--primary);
+}
+
+.label {
+  color: var(--text-2);
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.big {
+  display: flex;
+  align-items: center;
+  gap: var(--space-8);
+  color: var(--heading);
+  font-family: var(--font-display);
+  font-size: var(--text-2xl);
+  line-height: 1.2;
+}
+
+.note {
+  color: var(--text-2);
+  font-size: var(--text-sm);
+}
+
+.met {
+  color: var(--success);
+  font-weight: 700;
+}
+
+.bar {
+  width: 100%;
+  height: 12px;
+  appearance: none;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-pill);
+  background: var(--surface-2);
+  overflow: hidden;
+}
+
+.bar::-webkit-progress-bar {
+  background: var(--surface-2);
+}
+
+.bar::-webkit-progress-value {
+  background: var(--primary);
+}
+
+.bar::-moz-progress-bar {
+  background: var(--primary);
+}
+
+.ladder {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+  margin: var(--space-8) 0 0;
+  padding: 0;
+  list-style: none;
+  font-size: var(--text-xs);
+}
+
+.ladder li {
+  padding: 2px var(--space-8);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-pill);
+  color: var(--text-2);
+}
+
+.ladder .reached {
+  border-color: var(--primary);
+  color: var(--text);
+}
+
+.ladder [aria-current="step"] {
+  background: var(--primary);
+  color: var(--on-primary);
+  font-weight: 700;
+}
+
+.section {
+  display: grid;
+  gap: var(--space-16);
+}
+
+.section h2 {
+  font-size: var(--text-2xl);
+}
+
+.badges {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+  gap: var(--space-12);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.badges li {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-12);
+  padding: var(--space-16);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-8);
+  background: var(--surface);
+}
+
+.badgeIcon {
+  display: inline-grid;
+  place-items: center;
+  flex: none;
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-pill);
+  border: 2px solid currentColor;
+}
+
+.earned .badgeIcon {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: var(--on-primary);
+}
+
+.locked .badgeIcon {
+  border-style: dashed;
+  color: var(--text-2);
+}
+
+.badgeText {
+  display: grid;
+  gap: 2px;
+}
+
+.status {
+  font-size: var(--text-sm);
+  font-weight: 700;
+}
+
+.earned .status {
+  color: var(--success);
+}
+
+.locked .status {
+  color: var(--text-2);
+}
+
+.phases {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+  gap: var(--space-12);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.phases li {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: var(--space-12) var(--space-16);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-8);
+  background: var(--surface);
+}
+
+.phases strong {
+  font-family: var(--font-display);
+  font-size: var(--text-xl);
+}
+
+.confirm {
+  display: grid;
+  gap: var(--space-12);
+  max-width: 40rem;
+  padding: var(--space-16);
+  border: 2px solid var(--error);
+  border-radius: var(--radius-8);
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-8);
+}
+
+@media (forced-colors: active) {
+  .earned .badgeIcon,
+  .ladder [aria-current="step"] {
+    border-color: Highlight;
+  }
+}

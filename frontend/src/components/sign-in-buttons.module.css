@@ -1,0 +1,5 @@
+.buttons {
+  display: grid;
+  gap: var(--space-12);
+  max-width: 24rem;
+}

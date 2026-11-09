@@ -1,0 +1,101 @@
+/* The puzzle sizes to its own container, so it sits side by side wherever there is room
+   (the puzzles tab) and stacks where there is not (a narrow column or a phone). */
+.puzzle {
+  container-type: inline-size;
+  width: 100%;
+}
+
+.layout {
+  display: grid;
+  gap: var(--space-16) var(--space-32);
+  align-items: start;
+}
+
+@container (min-width: 44rem) {
+  .layout {
+    grid-template-columns: minmax(0, var(--board-size)) minmax(16rem, 1fr);
+  }
+}
+
+.board {
+  width: min(100%, var(--board-size));
+}
+
+.side {
+  display: grid;
+  align-content: start;
+  justify-items: start;
+  gap: var(--space-12);
+  min-width: 0;
+}
+
+.puzzle p {
+  margin: 0;
+}
+
+.prompt {
+  font-size: var(--text-lg);
+  font-weight: 700;
+}
+
+.context,
+.help {
+  color: var(--text-2);
+}
+
+.help {
+  font-size: var(--text-sm);
+}
+
+.status {
+  display: grid;
+  gap: var(--space-8);
+}
+
+.status:empty {
+  display: none;
+}
+
+.right,
+.wrong,
+.revealed,
+.hinted {
+  display: inline-flex;
+  align-items: flex-start;
+  gap: var(--space-8);
+  font-weight: 700;
+}
+
+.right svg,
+.wrong svg,
+.revealed svg,
+.hinted svg {
+  flex: none;
+  margin-top: 2px;
+}
+
+.right {
+  color: var(--success);
+}
+
+.wrong {
+  color: var(--error);
+}
+
+.revealed {
+  color: var(--primary);
+}
+
+.hinted {
+  padding: var(--space-8) var(--space-12);
+  border-left: var(--space-4) solid var(--accent);
+  border-radius: var(--radius-4);
+  background: var(--surface-2);
+  color: var(--text);
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-8);
+}

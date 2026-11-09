@@ -1,0 +1,45 @@
+.group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-8);
+}
+
+.option {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-8);
+  min-height: 44px;
+  min-width: 44px;
+  padding: var(--space-8) var(--space-12);
+  border: 2px solid var(--border);
+  border-radius: var(--radius-pill);
+  background: var(--surface);
+  color: var(--text);
+  font: inherit;
+  font-weight: 400;
+  cursor: pointer;
+}
+
+.option[aria-checked="true"] {
+  font-weight: 700;
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+/* Wide header: icons only, so the signed-in header stays on one row. Each button keeps its
+   aria-label, and the chosen theme keeps its bold border (not color alone). */
+@media (min-width: 1024px) {
+  .label {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+  }
+
+  .option {
+    justify-content: center;
+    padding-inline: var(--space-12);
+  }
+}

@@ -1,0 +1,11 @@
+Staunty chess pieces
+Copyright sadsnake1
+
+These files are unmodified copies from the Lichess project:
+https://github.com/lichess-org/lila/tree/master/public/piece/staunty
+
+Licensed under Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International.
+https://creativecommons.org/licenses/by-nc-sa/4.0/
+
+You may share and adapt them for non-commercial use if you give credit and
+license the result under the same terms. Commercial use is not allowed.

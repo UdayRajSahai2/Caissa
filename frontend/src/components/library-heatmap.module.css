@@ -1,0 +1,45 @@
+.layout {
+  display: grid;
+  gap: var(--space-24);
+  width: 100%;
+  align-items: start;
+}
+
+.intro {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-8);
+  margin: 0;
+}
+
+.views {
+  display: grid;
+  gap: var(--space-8);
+}
+
+.group {
+  composes: group from "./heat-insight.module.css";
+}
+
+.switch {
+  composes: switch from "./heat-insight.module.css";
+}
+
+.note {
+  max-width: 60ch;
+  margin: 0;
+  color: var(--text-2);
+}
+
+@media (min-width: 960px) {
+  .layout {
+    grid-template-columns: minmax(0, 36rem) minmax(16rem, 1fr);
+    align-items: stretch;
+  }
+
+  .intro,
+  .views {
+    grid-column: 1 / -1;
+  }
+}
